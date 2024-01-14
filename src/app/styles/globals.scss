@@ -8,16 +8,56 @@ html{
   font-size: 62.5%;
 }
 
-
-
 body{
   font-size: 1.6rem;
 }
 
 
+// ============  For Responsive Design using Media Screen Query ================
 
+@media  screen and (max-width: 800px) {
+  html{
+    font-size: 55%;
+  }
+  
+}
 
-
+@media  screen and (max-width: 650px) {
+  html{
+    font-size: 50%;
+  }
+  
+}
+@media  screen and (max-width: 550px) {
+  html{
+    font-size: 47.5%;
+  }
+  
+}
+@media  screen and (max-width: 500px) {
+  html{
+    font-size: 45%;
+  }
+  
+}
+@media  screen and (max-width: 475px) {
+  html{
+    font-size: 42%;
+  }
+  
+}
+@media  screen and (max-width: 450px) {
+  html{
+    font-size: 39%;
+  }
+  
+}
+@media  screen and (max-width: 400px) {
+  html{
+    font-size: 35%;
+  }
+  
+}
 // ================================================
 // ============ Normalize CSS =====================
 // ================================================

@@ -1,7 +1,104 @@
-.Accordian{
-    width: 55rem;
-    // height: 75rem;
-    background-color: red;
-    position: relative;
-    bottom: 8rem;
+@import "../../app/styles/colors.module.scss";
+
+.Accordian {
+  width: 65rem;
+  // height: 75rem;
+  background-color: $whiteColor;
+  position: relative;
+  bottom: 18rem;
+  border-radius: 1.2rem;
+  padding: 0 2.5rem;
+
+  // box shadow for Accordian.
+  -webkit-box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.5);
+
+  .star{
+    transform-origin: 50% 50%;
+  animation: demo-animation 3s cubic-bezier(0.68, -0.6, 0.32, 1.6) 0s 1 normal
+    both running;
+
+  // ========== Using Animation here=============
+  @keyframes demo-animation {
+    0% {
+      transform: translate(-100px, -100px) rotate(0deg) scale(1, 1);
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+      border-radius: 0%;
+    }
+
+    25% {
+      transform: scale(1.5) rotate(90deg);
+      clip-path: polygon(100% 100%, 100% 0%, 0% 0%, 0% 100%);
+      border-radius: 50% 50% 50% 0%;
+    }
+
+    50% {
+      transform: scale(1) rotate(180deg);
+      border-radius: 75%;
+    }
+
+    75% {
+      transform: scale(0.5) rotate(270deg);
+      clip-path: polygon(100% 100%, 100% 0%, 0% 0%, 0% 100%);
+      border-radius: 75%;
+    }
+
+    100% {
+      transform: scale(1) rotate(360deg);
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+      border-radius: 0%;
+    }
+
+    19.2% {
+      transform: translate(-112px, -113px) rotate(0deg) scale(0.76, 0.74);
+    }
+  }
+  }
+  
+  
 }
+
+.FAQ {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1.5rem;
+  padding-left: 1rem;
+  h1 {
+    font-size: 4rem;
+    color: $darkPurple;
+  }
+}
+// ============  For Responsive Design using Media Screen Query ================
+
+@media  screen and (max-width: 850px) {
+    .Accordian {
+        bottom: 12rem;
+    }
+  }
+@media  screen and (max-width: 800px) {
+    .Accordian {
+        bottom: 11rem;
+    }
+  }
+  
+  @media  screen and (max-width: 650px) {
+    .Accordian {
+        bottom: 9rem;
+    }
+    
+  }
+  
+  @media  screen and (max-width: 500px) {
+    .Accordian {
+        bottom: 7.5rem;
+    }
+    
+  }
+  @media  screen and (max-width: 450px) {
+    .Accordian {
+        bottom: 6rem;
+    }
+    
+  }

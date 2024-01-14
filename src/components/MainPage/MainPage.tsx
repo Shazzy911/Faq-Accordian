@@ -7,7 +7,7 @@ const MainPage: React.FC = () => {
   return (
     <>
         <div className={style.mainPage}>
-            <Image src={Profile} width={1440} height={320} alt='Image not found'/>
+            <Image src={Profile} width={140} height={80} alt='Image not found' className={style.mainImage}/>
 
             <Accordian/>
         </div>
