@@ -7,18 +7,15 @@ import PlusMinus from '../PlusMinus/PlusMinus';
 
 
 
-const Question: React.FC<AccordTypes> = ({ heading, paragraph }) => {
+const Question: React.FC<AccordTypes> = ({ id, heading, paragraph, menuOpen }) => {
     return (
         <> 
-        <div className={style.Question}>
+        <div className={style.Question} >
             <div className={style.questionHeading}>
                 <h3>{heading}</h3>
-                <PlusMinus/>
+                <PlusMinus id={id} children={undefined}/>
             </div>
-            {/* {isActive && */}
-             <p className={style.paragraph}>{paragraph}</p>
-             {/* } */}
-            
+             <p className={`${style.paragraph} ${menuOpen ? style.active : ''}`}>{paragraph}</p>
         </div>
         </>
     )

@@ -4,26 +4,23 @@ import Image from 'next/image';
 import Minus from "@/app/images/icon-minus.svg";
 import Plus from "@/app/images/icon-plus.svg";
 import style from "./PlusMinus.module.scss";
+import { useAppDispatch, useAppSelector } from '@/app/redux/hooks';
+import { setMenuOpen } from '@/app/redux/AccordionSlicer';
+interface PlusMinusType {
+    children: React.ReactNode;
+    id: number | undefined;
+}
+const PlusMinus: React.FC<PlusMinusType> = ({id}) => {
+    const dispatch = useAppDispatch();
 
-const PlusMinus: React.FC = () => {
-    useState
-    const [isActive, setIsActive] = useState(false);
+    const menuOpen = useAppSelector((state: any)=> state.menu.menuOpen);
 
-    const openHandle = (e: React.MouseEvent<HTMLImageElement>) => { 
-        setIsActive(true);
-        console.log({message: true});
-     }
-     const closeHandle = (e: React.MouseEvent<HTMLImageElement>) => { 
-        setIsActive(false);
-        console.log({message: false});
-
-     }
+    console.log(id)
     return (
         <>
-
             <div className={style.plusMinus}>
-                <Image src={Minus} height={30} width={30} alt='Image not Found' onClick={closeHandle} />
-                <Image src={Plus} height={30} width={30} alt='Image not Found' onClick={openHandle}/>
+                <Image src={Minus} height={30} width={30} key={id} alt='Image not Found' onClick={() => dispatch(setMenuOpen(false))} className={`${style.plusMinusImg && style.minus} ${menuOpen ? style.active : ''}`} />
+                <Image src={Plus} height={30} width={30}  key={id} alt='Image not Found' onClick={()=> dispatch(setMenuOpen(true))} className={`${style.plusMinusImg && style.plus} ${menuOpen ? style.active : ''}`} />
             </div>
         </>
     )

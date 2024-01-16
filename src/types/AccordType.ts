@@ -1,7 +1,10 @@
+export type menuOpen = boolean;
+
 export type AccordTypes =  {
         id?: number;
         heading: string;
         paragraph: string;
+        menuOpen?: menuOpen;
 }
 
 const AccordData: AccordTypes[] = [

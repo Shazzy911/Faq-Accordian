@@ -4,7 +4,11 @@ import Image from 'next/image';
 import star from "@/app/images/icon-star.svg";
 import AccordData from '@/types/AccordType';
 import Question from '../Question/Question';
-const Accordian: React.FC = () => {
+interface AccordianType {
+    children: React.ReactNode;
+    menuOpen: boolean
+}
+const Accordian: React.FC<AccordianType> = ({children, menuOpen}) => {
     return (
         <>
             <div className={style.Accordian}>
@@ -14,15 +18,11 @@ const Accordian: React.FC = () => {
                 </div>
                 {
                     AccordData.map(({ id, heading, paragraph }) => (
-                        <Question key={id} heading={heading} paragraph={paragraph} />
+                        <Question key={id} id={id} heading={heading} paragraph={paragraph} menuOpen={menuOpen}/>
                     ))
                 }
-
-
-
             </div>
         </>
     )
 }
-
 export default Accordian

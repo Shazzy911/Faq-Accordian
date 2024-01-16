@@ -47,10 +47,6 @@
               transform-origin: 0% 0%;
     }
   }
-  
-  
-
-
 }
 
 .questionHeading {
@@ -68,4 +64,11 @@
   margin: 0.5rem 0 0 0;
   padding-right: 5rem;
   // display: none;
+}
+.paragraph.active {
+  
+  display: flex;
+}
+.paragraph:not(.active) {
+  display: none;
 }

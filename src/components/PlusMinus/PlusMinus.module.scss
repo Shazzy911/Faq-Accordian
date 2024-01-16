@@ -3,4 +3,32 @@
     &:hover{
         cursor: pointer;
     }
+    .minus{
+        position: relative;
+        left: 3rem;
+        
+    }
+    .minus.active {
+        z-index: 99999;
+        display: flex;
+      }
+    .minus:not(.active) {
+        z-index: -1;
+        visibility: hidden;
+      }
+    //   .plus{
+    //     display: flex;
+    //   }
+    .plus.active {
+        z-index: -1;
+        visibility: hidden;
+      }
+    .plus:not(.active) {
+        z-index: 99999;
+        display: flex;
+      }
+    .plusMinusImg{
+        height: 3rem;
+        width: 3rem;
+    }
 }

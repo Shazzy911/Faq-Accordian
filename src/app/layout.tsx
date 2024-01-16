@@ -1,7 +1,7 @@
-import type { Metadata } from 'next'
-import { Work_Sans } from 'next/font/google'
-import './styles/globals.scss'
-
+import type { Metadata } from 'next';
+import { Work_Sans } from 'next/font/google';
+import './styles/globals.scss';
+import Providers from './redux/Provider';
 const worksans = Work_Sans({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -16,7 +16,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={worksans.className}>{children}</body>
+      <body className={worksans.className}>
+        <Providers>
+        {children}
+        </Providers>
+        </body>
     </html>
   )
 }
