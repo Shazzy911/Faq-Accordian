@@ -5,10 +5,9 @@ import star from "@/app/images/icon-star.svg";
 import AccordData from '@/types/AccordType';
 import Question from '../Question/Question';
 interface AccordianType {
-    children: React.ReactNode;
     menuOpen: boolean
 }
-const Accordian: React.FC<AccordianType> = ({children, menuOpen}) => {
+const Accordian: React.FC<AccordianType> = ({ menuOpen}) => {
     return (
         <>
             <div className={style.Accordian}>
