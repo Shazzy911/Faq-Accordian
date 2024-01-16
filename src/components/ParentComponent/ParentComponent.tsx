@@ -8,7 +8,7 @@ const ParentComponent: React.FC = () => {
     const menuOpen = useAppSelector((state: any)=> state.menu.menuOpen);
   return (
     <>
-        <Accordian menuOpen={menuOpen} children={undefined}/>
+        <Accordian menuOpen={menuOpen} />
     </>
   )
 }

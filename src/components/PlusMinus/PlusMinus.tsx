@@ -14,8 +14,6 @@ const PlusMinus: React.FC<PlusMinusType> = ({id}) => {
     const dispatch = useAppDispatch();
 
     const menuOpen = useAppSelector((state: any)=> state.menu.menuOpen);
-
-    console.log(id)
     return (
         <>
             <div className={style.plusMinus}>
